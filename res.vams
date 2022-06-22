@@ -1,0 +1,21 @@
+/*RESISTOR MODEL 
+
+`include "disciplines.vams" 
+`include "constants.vams"  
+
+module res(p, n); // positive and negative connections on res
+
+inout p;
+inout n;
+
+electrical p, n;
+
+parameter real r=1; 
+
+branch (p,n) resistor; //used with 3rd form of res 
+analog begin 
+
+	I(p,n) <+ V(p,n)/r; 	    //defining current through res (conductance form, large r) (r>1)
+
+end
+endmodule

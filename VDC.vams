@@ -1,0 +1,18 @@
+`include "disciplines.vams"
+`include "constants.vams"
+
+//--------------------------------------------------
+//               DC source
+//--------------------------------------------------
+`timescale 1ns/1ps
+module VDC (p, n);
+
+    inout      p, n;
+    electrical p, n;
+
+    parameter real dc = 2.0;  //fixed DC value
+
+    analog 
+        V(p,n) <+ dc;
+
+endmodule
